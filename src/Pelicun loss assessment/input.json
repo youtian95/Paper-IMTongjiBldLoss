@@ -1,0 +1,64 @@
+{
+  "DL": {
+    "Asset": {
+      "ComponentAssignmentFile": "QNT.csv",
+      "ComponentDatabase": "FEMA P-58",
+      "NumberOfStories": "21",
+      "OccupancyType": "EDU2",
+      "PlanArea": "1312.2"
+    },
+    "Damage": {
+      "CollapseFragility": {
+        "CapacityDistribution": "lognormal",
+        "CapacityMedian": "0.83",
+        "DemandType": "SA_4.20",
+        "Theta_1": "0.32"
+      },
+      "DamageProcess": "FEMA P-58",
+      "IrreparableDamage": {
+        "DriftCapacityLogStd": "0.3",
+        "DriftCapacityMedian": "0.01"
+      }
+    },
+    "Demands": {
+      "Calibration": {
+        "ALL": {
+          "DistributionFamily": "lognormal"
+        },
+        "PID": {
+          "DistributionFamily": "lognormal",
+          "TruncateLower": "",
+          "TruncateUpper": ""
+        }
+      },
+      "DemandFilePath": "demands.csv",
+      "SampleSize": "10000"
+    },
+    "Losses": {
+      "BldgRepair": {
+        "ConsequenceDatabase": "FEMA P-58",
+        "MapApproach": "Automatic",
+        "ReplacementCost": {
+          "Distribution": "normal",
+          "Median": "100000000.0",
+          "Theta_1": "0.00001",
+          "Unit": "USD_2011"
+        },
+        "ReplacementTime": {
+          "Distribution": "lognormal",
+          "Median": "10000.0",
+          "Theta_1": "0.00001",
+          "Unit": "worker_day"
+        }
+      }
+    }
+  },
+  "GeneralInformation": {
+    "units": {
+      "force": "N",
+      "length": "m",
+      "temperature": "C",
+      "time": "sec"
+    }
+  }
+}
