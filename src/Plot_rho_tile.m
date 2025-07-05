@@ -30,7 +30,7 @@ end
 N_bld = size(CovFunMat,1);
 
 figure;
-t = tiledlayout(size(CovFunMat,1),size(CovFunMat,2),'TileSpacing','compact');
+t = tiledlayout(size(CovFunMat,1),size(CovFunMat,2),'TileSpacing','tight');
 for i=1:size(CovFunMat,1)
     for j=1:size(CovFunMat,2)
         nexttile;
@@ -52,12 +52,12 @@ for i=1:size(CovFunMat,1)
         box on;
         grid on;
         ax = gca; 
-        if j~=1
-            ax.YTickLabel ='';
-        end
-        if i~=size(CovFunMat,1)
-            ax.XTickLabel ='';
-        end
+        % if j~=1
+        %     ax.YTickLabel ='';
+        % end
+        % if i~=size(CovFunMat,1)
+        %     ax.XTickLabel ='';
+        % end
         ax.FontSize = fontsize;
         ax.FontName = 'Calibri';
         ax.YLim = [-0.4,1];
@@ -69,19 +69,19 @@ for i=1:size(CovFunMat,1)
         else
             temp = BldName;
         end
-        if j==1
-            ylabel(temp{i},'FontName','微软雅黑');
-        end
-        if i==1
-            title(temp{j},'FontName','微软雅黑');
-        end
-        if i==4
-            xlabel('\ith \rm(km)')
-        end
-        x = 1; y = 0.8;
+        % if j==1
+        %     ylabel(temp{i},'FontName','微软雅黑');
+        % end
+        % if i==1
+        %     title(temp{j},'FontName','微软雅黑');
+        % end
+        xlabel('\ith /\rmkm')
+        
         textLabel = cellstr(string(1:N_bld));
         str = ['$\ \ \rm{cov}(\varepsilon_{\theta}^{',textLabel{i},'},\varepsilon_{\theta}^{',textLabel{j},'})$'];
-        text(x,y,str,'Interpreter','latex','FontSize',fontsize);
+        % x = 1; y = 0.8;
+        % text(x,y,str,'Interpreter','latex','FontSize',fontsize);
+        ylabel(str,'Interpreter','latex','FontSize',fontsize);
     end
 end
 
@@ -89,7 +89,7 @@ end
 %     'Location','northeastoutside');
 
 t.Units = "centimeters";
-t.Position = [5 5 8 8].*(12/8); %  [left bottom width height]
+t.Position = [5 5 16 16]; %  [left bottom width height]
 set(gcf,'units','normalized','position',[0.1 0.1 0.8 0.8]);
 
 end

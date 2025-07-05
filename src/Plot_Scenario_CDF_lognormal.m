@@ -117,7 +117,7 @@ hold on;
 
 p = plot(-3:0.05:3, normcdf(-3:0.05:3));
 s = scatter(sort(Samples), (1:numel(Samples))./numel(Samples));
-% legend([p s],{'\fontname{微软雅黑}标准正态分布','\fontname{微软雅黑}观测结果'},"BackgroundAlpha",0.5)
+legend([p s],{'\fontname{微软雅黑}标准正态分布','\fontname{微软雅黑}观测结果'},"BackgroundAlpha",0.5)
 
 box on;
 xlabel('$\varepsilon$','Interpreter','latex');

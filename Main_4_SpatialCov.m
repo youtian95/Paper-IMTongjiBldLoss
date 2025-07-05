@@ -1,6 +1,6 @@
 % 抗震性能空间相关性分析
 
-if 1
+if 0
     EQName = 'Northridge19940117';
     imagefile = '.\Figures\Northridge.png';
 else
@@ -61,6 +61,8 @@ elseif contains(EQName,'Northridge')
     xlim([-119.5, -117]);
     ylim([33.5, 35]);
 end
+xtickformat('%.1f');
+ytickformat('%.1f');
 legend({'震中','台站','选取台站'},'FontName','微软雅黑');
 
 %% 绘图: EDP结果绘图
@@ -103,6 +105,7 @@ ifplot = true;
     Sa_Scenario_filter, ifplot, ...
     IDA_EDP_IfFinish = Capacity3D(i_struct).AnalysisTime./Capacity3D(i_struct).RecordDuration>0.7);
 
+CF = gca; CF.TickLength = [0.03, 0.03];
 %% (2) 绘图：某个结构EDP epsilon的空间分布
 i_struct=1;
 EDPtype = 4;
